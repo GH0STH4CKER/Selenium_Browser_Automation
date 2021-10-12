@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Form</title>
+<style>
+    td {
+        padding: 10px;
+    }
+    h1 {
+        padding-left: 80px;
+    }
+    td,th {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+    }
+    select {
+        font-size: 17px;
+        max-width: 88%;
+        width: 200px;
+    }
+    #num_birthyear {
+        font-size: 17px;
+        max-width: 88%;
+        width: 200px;
+    }
+    #btn_submit {
+        font-size: 20;
+        width: 115px;
+        height: 32px;
+        margin-left: -20px;
+    }
+    #btn_clear {
+        font-size: 20;
+        width: 100px;
+        height: 32px;
+        margin-left: -40px;
+    }
+    #myTable {
+        color:darkblue;
+        margin-top: -50px;
+        float: center;
+        margin-left: 500px;
+        padding: 5px.5px,5px,5px;
+    }
+    #entry {
+        float: left;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>User Details </h1>
+
+<form onsubmit="return false;" id="form">
+<table id="entry">
+<tr>
+    <td>First Name</td>
+    <td>:</td>
+    <td><input type="text" id="first_name" required></br></td>
+</tr>
+<tr>
+    <td>Last Name</td>
+    <td>:</td>
+    <td><input type="text" id="last_name"  required></td>
+</tr>
+<tr>
+    <td>Gender</td>
+    <td>:</td>
+    <td>
+        <select id="dropdown_gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Unspecified">Unspecified</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Age</td>
+    <td>:</td>
+    <td><input type="number" id="num_age" required></td>
+</tr>
+<tr>
+    <td>Birth Year</td>
+    <td>:</td>
+    <td><input type="date" id="num_birthyear" value="" min="1900-01-01" max="2030-12-31" required></td>
+</tr>   
+<tr>
+    <td></td>
+    <td></td>
+    <td><input type="button" value="Clear" id="btn_clear" onclick="myClearFunction(event)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" id="btn_submit" onclick="myCreateFunction(event)"></td>
+</tr>   
+</table>
+</form>
+
+</br></br>
+<table id="myTable" border="1">
+    <tr>
+      <th width="170px">&nbsp;First Name&nbsp;</th>
+      <th width="170px">&nbsp;Last Name&nbsp;</th>
+      <th width="120px">&nbsp;Gender&nbsp;</th>
+      <th width="80px">&nbsp;Age&nbsp;</th>
+      <th width="120px">&nbsp;Birth Year&nbsp;</th>
+    </tr>
+
+</table>
+
+<script>
+    document.getElementById("dropdown_gender").value = ""
+
+    function myCreateFunction(event) {
+      var Ifname = document.getElementById("first_name").value;
+      var Ilname = document.getElementById("last_name").value;
+      var Igender = document.getElementById("dropdown_gender").value;
+      var Iage = document.getElementById("num_age").value;
+      var Ibyear = document.getElementById("num_birthyear").value;
+      
+      if (Ifname != "") {
+        if (Ilname != "") {
+          if (Igender != "") {
+            if (Iage != "") {
+              if (Ibyear != "") {
+                var table = document.getElementById("myTable");
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                
+                cell1.innerHTML = Ifname;
+                cell2.innerHTML = Ilname;
+                cell3.innerHTML = Igender;
+                cell4.innerHTML = Iage;
+                cell5.innerHTML = Ibyear;
+                
+                myClearFunction(event);
+              }        
+            } 
+          }
+        }
+      }     
+    }
+    function myClearFunction(event) {
+      event.preventDefault();
+      document.getElementById("first_name").value = "";
+      document.getElementById("last_name").value = "";
+      document.getElementById("dropdown_gender").value = "";
+      document.getElementById("num_age").value = "";
+      document.getElementById("num_birthyear").value = "";
+    }
+
+    </script>
+
+</body>
+</html>
