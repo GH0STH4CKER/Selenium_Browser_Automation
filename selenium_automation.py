@@ -3,11 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
-driver = webdriver.Chrome(executable_path=r'C:\Users\Dimuth De Zoysa\Downloads\chromedriver_win32\chromedriver.exe')
+driver = webdriver.Chrome(executable_path=r'yourpath\chromedriver.exe')
 
-driver.get('file:///C:/Users/Dimuth%20De%20Zoysa/Desktop/Python_projects/Details_Input&Display.html')
+driver.get('file:///yourpath/Details_Input&Display.html')
 
-file = open('C://Users//Dimuth De Zoysa//Desktop//Python_projects//user_detail.txt', 'r')
+file = open('yourpath/user_detail.txt', 'r')
 lines = file.readlines()
 
 time.sleep(5)
