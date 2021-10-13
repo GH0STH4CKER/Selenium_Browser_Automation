@@ -1,4 +1,5 @@
-# Selenium_Browser_Automation
 Python Selenium Browser Automation (Chrome Web Driver)
 
-*Before Using This Change yourpath/*
+<b>Before Using This Change your paths</b>
+
+Get Chrome Web Driver : https://chromedriver.chromium.org/downloads
